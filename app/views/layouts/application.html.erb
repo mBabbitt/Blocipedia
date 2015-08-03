@@ -11,9 +11,7 @@
     <div class="container">
       <ul class="nav nav-tabs">
           <li><%= link_to "Blocipedia", root_path %></li>
-      
-
-          <ul class="nav nav-tabs">
+        <li><%= link_to "Wikis", wikis_path %></li>
     <div class="pull-right user-info">
       <% if current_user %>
           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>

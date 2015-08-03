@@ -929,3 +929,709 @@ Migrating to CreateWikis (20150803135404)
             FROM sqlite_temp_master
             WHERE name='index_wikis_on_user_id' AND type='index'
 [0m
+
+
+Started GET "/" for ::1 at 2015-08-03 08:03:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 380ms (Views: 362.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:03:07 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 55ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:03:09 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 73ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-03 08:03:12 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 119ms (Views: 97.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-03 08:03:13 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFQfqqjag1P12R8Gh9rKkaBHSihB3Tqj3sNbJMP9ztHevWwbx9uHbrHrPckDpfxFltNaJh27fXL/oESfS92yww==", "user"=>{"email"=>"catonmegan@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "catonmegan@yahoo.com"]]
+Completed 401 Unauthorized in 16ms (ActiveRecord: 1.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFQfqqjag1P12R8Gh9rKkaBHSihB3Tqj3sNbJMP9ztHevWwbx9uHbrHrPckDpfxFltNaJh27fXL/oESfS92yww==", "user"=>{"email"=>"catonmegan@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 112ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-03 08:03:15 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:08:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 498ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a0bc90fa8>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path  %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115440214620'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.8ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (107.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:08:20 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a0d9f0670>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path  %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115440214620'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.8ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (7.9ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (89.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:08:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a12bd1610>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path  %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115440214620'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.1ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (79.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:13:22 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a0ce191f8>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path  %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115449178960'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.6ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:13:50 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a0c98eed0>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115482279700'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (126.0ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:13:57 -0700
+
+ActionController::RoutingError (No route matches [GET] "/wikis"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/icarus/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/icarus/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/icarus/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.1ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.6ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:14:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a10db5938>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:         <li><%= link_to "Wikis", wikis_path %></li>
+    15:     <div class="pull-right user-info">
+    16:       <% if current_user %>
+    17:           <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115482279700'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.5ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.9ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:14:19 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-03 08:14:19 -0700
+
+
+Started GET "/" for ::1 at 2015-08-03 08:14:49 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `wikis_path' for #<#<Class:0x007f8a0bc92c68>:0x007f8a1044a470>):
+    11:     <div class="container">
+    12:       <ul class="nav nav-tabs">
+    13:           <li><%= link_to "Blocipedia", root_path %></li>
+    14:           <li><%= link_to "Wikis", wikis_path %></li>
+    15:         
+    16:     <div class="pull-right user-info">
+    17:       <% if current_user %>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3492849816053556676_70115477539220'
+
+
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.1ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/icarus/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:16:22 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-03 08:16:22 -0700
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:16:24 -0700
+Processing by WikisController#index as HTML
+  Rendered wikis/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:31:15 -0700
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (1.5ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 86ms (Views: 73.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 08:31:15 -0700
+
+
+Started GET "/wikis/new" for ::1 at 2015-08-03 08:31:22 -0700
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 82ms (Views: 77.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:32:00 -0700
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:32:32 -0700
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-03 08:32:32 -0700
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:32:50 -0700
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis/new" for ::1 at 2015-08-03 08:32:56 -0700
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/wikis" for ::1 at 2015-08-03 08:33:13 -0700
+Processing by WikisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HLuhxOQaGkrn5LPJzfnJqGrEm8MQ0b0wzwubPgVt1HOeUtJ1ixsed6PWkQZJhv98XFCLzUy3+uHuaISFjU2oYQ==", "wiki"=>{"title"=>"add wiki", "body"=>"This is a wiki"}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "add wiki"], ["body", "This is a wiki"], ["created_at", "2015-08-03 15:33:13.480989"], ["updated_at", "2015-08-03 15:33:13.480989"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/wikis/1
+Completed 302 Found in 13ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/wikis/1" for ::1 at 2015-08-03 08:33:13 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWiki Load (0.3ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 64ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/1/edit" for ::1 at 2015-08-03 08:33:18 -0700
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/wikis/1" for ::1 at 2015-08-03 08:33:27 -0700
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QsOHxVyEbm2owOUUCoaIatcOfLfDUWT+zFIcE8YWhFvAKvR0M4VqUOzyx9uO+b6+4ZpsuZ83Iy/tMQOoTjb4SQ==", "wiki"=>{"title"=>"add wiki", "body"=>"This is a wiki. I am adding to it"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["body", "This is a wiki. I am adding to it"], ["updated_at", "2015-08-03 15:33:27.480418"], ["id", 1]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/wikis/1
+Completed 302 Found in 11ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/wikis/1" for ::1 at 2015-08-03 08:33:27 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:33:29 -0700
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis/1" for ::1 at 2015-08-03 08:33:32 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/wikis/1" for ::1 at 2015-08-03 08:33:35 -0700
+Processing by WikisController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NXmDsSgkkbAMAjGScD9ka95EeweeT4abXs1YgJOPlVq3kPAARyWVjUgwE130QFK/6NBrCcIpwUp/rkc7G6/pSA==", "id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "wikis" WHERE "wikis"."id" = ?  [["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:33:35 -0700
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis/new" for ::1 at 2015-08-03 08:33:41 -0700
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/wikis" for ::1 at 2015-08-03 08:34:03 -0700
+Processing by WikisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NmmxS7AdMxcJpDm7EPMxHZsDMEOAfCG46UKpRcowZi20gML63xw3Kk2WG3SUjAfJrZcgTdwaZmnIIbb+QhAaPw==", "wiki"=>{"title"=>"This is my first wiki", "body"=>"I can add, edit and delete"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "This is my first wiki"], ["body", "I can add, edit and delete"], ["created_at", "2015-08-03 15:34:03.362936"], ["updated_at", "2015-08-03 15:34:03.362936"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/2
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/wikis/2" for ::1 at 2015-08-03 08:34:03 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWiki Load (0.5ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered wikis/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-03 08:34:07 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 81ms (Views: 67.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-03 08:34:23 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCC6XHTPN2EVb4S157g1QwYpb+Xlnxd8TiYTQkk410SqycntG84zXFFdpnpjxwOXML1/67n5UK1vRQz5wRirVg==", "user"=>{"email"=>"meganicarus@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "meganicarus@yahoo.com"]]
+Completed 401 Unauthorized in 70ms (ActiveRecord: 1.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCC6XHTPN2EVb4S157g1QwYpb+Xlnxd8TiYTQkk410SqycntG84zXFFdpnpjxwOXML1/67n5UK1vRQz5wRirVg==", "user"=>{"email"=>"meganicarus@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 122ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:34:25 -0700
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-03 08:34:29 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-08-03 08:34:40 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-08-03 08:34:55 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hSffWp2Sw8rSuL8bB6Rboae+s1UbrGu1btW6wl4aBdYHzqzr8pPH95aKndSD2211kSqjW0fKLGRPtqV51jp5xA==", "user"=>{"name"=>"megan", "email"=>"meganbabbitt23@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'meganbabbitt23@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 154ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-08-03 08:35:05 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5YNHazPXTKzC22a/PvHGIzSV3fWAb7uGpzLJoJjpIQNnajTaXNZIkYbpRHC6jvD3AgHN+9wJ/FeGUdYbEMldEQ==", "user"=>{"name"=>"megan", "email"=>"meganbabbitt23@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'meganbabbitt23@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "0d34174718215c5eca2478def1667acdc238c68a5a44605933785ff438c9b739"]]
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "meganbabbitt23@gmail.com"], ["encrypted_password", "$2a$10$WTfGr9z8DFnf5HIjUBQ75e./70Ml4YANmHWDtIs0Zl5l5BoWyoMES"], ["name", "megan"], ["created_at", "2015-08-03 15:35:05.156123"], ["updated_at", "2015-08-03 15:35:05.156123"], ["confirmation_token", "0d34174718215c5eca2478def1667acdc238c68a5a44605933785ff438c9b739"], ["confirmation_sent_at", "2015-08-03 15:35:05.349763"]]
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.8ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 279.5ms
+
+Sent mail to meganbabbitt23@gmail.com (1047.0ms)
+Date: Mon, 03 Aug 2015 08:35:05 -0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: meganbabbitt23@gmail.com
+Message-ID: <55bf8a29a036b_1f223fc5066a81e0203e@Megans-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome meganbabbitt23@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=ADFdQ9tS7SLJ1_83Ct-7">Confirm my account</a></p>
+
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 1620ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:35:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=ADFdQ9tS7SLJ1_83Ct-7" for ::1 at 2015-08-03 08:35:49 -0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"ADFdQ9tS7SLJ1_83Ct-7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "0d34174718215c5eca2478def1667acdc238c68a5a44605933785ff438c9b739"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2015-08-03 15:35:49.275668"], ["updated_at", "2015-08-03 15:35:49.277232"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-03 08:35:49 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-03 08:36:11 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PYblSCYQG5sZCq8LldDsL/oe+CzLbW3zEboeyIbXX4e/b5b5SREfpl04jcQRr9r7zIroIpcLKiIw2QFzDvcjlQ==", "user"=>{"email"=>"meganbabbitt23@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "meganbabbitt23@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2015-08-03 15:36:11.899917"], ["updated_at", "2015-08-03 15:36:11.900691"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-08-03 15:36:11.905641"], ["current_sign_in_at", "2015-08-03 15:36:11.905641"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-08-03 15:36:11.906295"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 88ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 08:36:11 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-03 08:36:16 -0700
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.2ms)
