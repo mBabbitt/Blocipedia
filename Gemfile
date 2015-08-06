@@ -11,6 +11,8 @@ gem 'rails', '4.2.1'
  group :development do
    gem 'sqlite3'
  end
+ 
+gem 'faker'
 
 gem 'devise'
 

@@ -2271,3 +2271,80 @@ Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (0.3ms)
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
 Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dustin.schroeder@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Lizzie Bahringer"], ["email", "dustin.schroeder@hotmail.com"], ["encrypted_password", "$2a$10$3MWjjpxVyOn7AFh.kiZrQOfHCzH6twnqJ05WJnCXUchi1D7hit8d6"], ["confirmed_at", "2015-08-06 14:38:47.532820"], ["created_at", "2015-08-06 14:38:47.554756"], ["updated_at", "2015-08-06 14:38:47.554756"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rhett@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Leon Kuphal"], ["email", "rhett@gmail.com"], ["encrypted_password", "$2a$10$vSbID/op/A//Ik7eHK7rnOMmtcfk4qdnmdFboo27qTNEArzIDFAiK"], ["confirmed_at", "2015-08-06 14:38:47.621482"], ["created_at", "2015-08-06 14:38:47.622717"], ["updated_at", "2015-08-06 14:38:47.622717"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'noelia@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Jamil Bosco"], ["email", "noelia@yahoo.com"], ["encrypted_password", "$2a$10$Fuusq1a0uolF8ULU8/igL.po07wW.pGwHhLUo2c7Vzx69nUa5EsLK"], ["confirmed_at", "2015-08-06 14:38:47.689119"], ["created_at", "2015-08-06 14:38:47.690319"], ["updated_at", "2015-08-06 14:38:47.690319"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kaleb.terry@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Colton Bradtke"], ["email", "kaleb.terry@yahoo.com"], ["encrypted_password", "$2a$10$6dtJ/uuyACe4PmPmexeQzuq1wUPhYaeq5mOZZZbMtCgf7TltVDu.S"], ["confirmed_at", "2015-08-06 14:38:47.755414"], ["created_at", "2015-08-06 14:38:47.756563"], ["updated_at", "2015-08-06 14:38:47.756563"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'meredith.lehner@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Chaz Nikolaus"], ["email", "meredith.lehner@gmail.com"], ["encrypted_password", "$2a$10$O/fS7fnRKAKrAOkxp58rk.FT/lFMuWLtdgAf/dA/rQ7pNN3bROFHi"], ["confirmed_at", "2015-08-06 14:38:47.822783"], ["created_at", "2015-08-06 14:38:47.823952"], ["updated_at", "2015-08-06 14:38:47.823952"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grayce_ruel@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Ms. Clair Strosin"], ["email", "grayce_ruel@hotmail.com"], ["encrypted_password", "$2a$10$z/n.uP4.LfUSe1LnhxHXSer8BRxLpO1ZzMHyMHr8XvEBf7pwYtyhi"], ["confirmed_at", "2015-08-06 14:38:47.891380"], ["created_at", "2015-08-06 14:38:47.892689"], ["updated_at", "2015-08-06 14:38:47.892689"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'markus@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Stefanie Rogahn"], ["email", "markus@gmail.com"], ["encrypted_password", "$2a$10$OMCeyuTIo.NWqVa/AFyRvOraIUwgm2Flc0iv4EO3dAxc1UpVFy9VS"], ["confirmed_at", "2015-08-06 14:38:47.958604"], ["created_at", "2015-08-06 14:38:47.959717"], ["updated_at", "2015-08-06 14:38:47.959717"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "role", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Admin"], ["email", "admin@example.com"], ["encrypted_password", "$2a$10$gXwBIyeKrmycmzEk0R0TAu70kIeXZWW2YSXWFQJzC3Z/g6XwPqweu"], ["role", "admin"], ["confirmed_at", "2015-08-06 14:38:48.025633"], ["created_at", "2015-08-06 14:38:48.026721"], ["updated_at", "2015-08-06 14:38:48.026721"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Saepe deleniti consequuntur architecto molestias ipsum."], ["body", "Ut suscipit sit voluptatibus tempora incidunt deleniti et. In fuga et ut accusantium expedita quia id. Commodi ea nihil natus est."], ["created_at", "2015-08-06 14:38:48.049441"], ["updated_at", "2015-08-06 14:38:48.049441"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Quo nulla suscipit ad eveniet ea optio nihil blanditiis."], ["body", "Numquam et provident. Odit iste repellat nihil. Aliquam eligendi recusandae."], ["created_at", "2015-08-06 14:38:48.052996"], ["updated_at", "2015-08-06 14:38:48.052996"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Non eum harum est voluptas ut."], ["body", "Enim ducimus animi voluptas officiis perferendis omnis. Omnis rem ea commodi. Magni tenetur consequatur. Rerum ea minus maiores provident voluptas dolor eligendi."], ["created_at", "2015-08-06 14:38:48.056350"], ["updated_at", "2015-08-06 14:38:48.056350"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["title", "Molestiae autem autem rerum fuga provident."], ["body", "Ducimus quo magni. Maiores veritatis voluptates consequatur accusantium saepe. Quam sed et qui esse quos iure ab. Dolores aut recusandae doloremque quisquam."], ["created_at", "2015-08-06 14:38:48.059667"], ["updated_at", "2015-08-06 14:38:48.059667"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Omnis sit debitis sit."], ["body", "Mollitia quasi voluptas ipsam nesciunt. Velit enim et fuga optio similique omnis. Molestiae voluptatibus aut voluptatem. Id consequatur nobis non quidem."], ["created_at", "2015-08-06 14:38:48.063374"], ["updated_at", "2015-08-06 14:38:48.063374"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Eum voluptate quo eligendi deserunt."], ["body", "Cupiditate et et cumque ut. Ut iusto nihil quia dolor omnis non. Sunt voluptates ipsum culpa. Ut saepe rerum mollitia sequi voluptatem pariatur. Illum est officiis amet facere facilis."], ["created_at", "2015-08-06 14:38:48.066886"], ["updated_at", "2015-08-06 14:38:48.066886"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 10], ["title", "Quia fuga veniam at culpa dolorem eveniet ullam sit."], ["body", "Aut ipsum voluptas velit maxime id saepe. Fugiat earum id assumenda. Magni dolor eaque maxime. Aut ullam ut qui dicta odio eos quia."], ["created_at", "2015-08-06 14:38:48.070210"], ["updated_at", "2015-08-06 14:38:48.070210"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Dolor dignissimos ut et."], ["body", "Animi quo excepturi aspernatur voluptatum. Ut non dolorem eos commodi. Officiis necessitatibus ab harum aut iusto. Maxime animi error enim. Corporis sint reprehenderit a est numquam ut nam."], ["created_at", "2015-08-06 14:38:48.073974"], ["updated_at", "2015-08-06 14:38:48.073974"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Itaque consequatur vero magni sed possimus."], ["body", "Aliquam consequuntur qui voluptatem qui vero. Id dolor quae delectus velit debitis officiis. Sit accusamus numquam quisquam."], ["created_at", "2015-08-06 14:38:48.078680"], ["updated_at", "2015-08-06 14:38:48.078680"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["title", "Dicta quam tempora labore et iste cum."], ["body", "Sit modi accusantium occaecati. Maxime distinctio laudantium qui. Perspiciatis commodi iure aspernatur laboriosam suscipit consequatur."], ["created_at", "2015-08-06 14:38:48.081856"], ["updated_at", "2015-08-06 14:38:48.081856"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Ratione explicabo itaque in quidem."], ["body", "Sit ut dolor. Magni qui esse sit. In quam sint praesentium rerum aut."], ["created_at", "2015-08-06 14:38:48.084945"], ["updated_at", "2015-08-06 14:38:48.084945"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "At doloribus non omnis vero ea."], ["body", "Voluptatum consectetur maxime ipsam quis dolor. Rerum non deserunt aspernatur. Natus facilis consequuntur numquam."], ["created_at", "2015-08-06 14:38:48.088233"], ["updated_at", "2015-08-06 14:38:48.088233"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Qui quas nulla necessitatibus hic ex reprehenderit optio quasi."], ["body", "Eos quis facere autem aut nemo vel aut. Qui rerum incidunt. Necessitatibus id quia totam mollitia quisquam. Sit non quo magni. At quia libero excepturi nam totam est ut."], ["created_at", "2015-08-06 14:38:48.091825"], ["updated_at", "2015-08-06 14:38:48.091825"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
