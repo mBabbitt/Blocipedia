@@ -4,17 +4,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-def user?
-    role == 'user'
-  end   
+ has_many :wikis, dependent: :destroy
 
-  def member?
-    role == 'member'
+
+  def standard?
+    role == 'standard'
   end
 
   def admin?
     role == 'admin'
   end
 
-
+  def premium?
+    role == 'premium'
+  end
 end
