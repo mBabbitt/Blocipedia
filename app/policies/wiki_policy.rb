@@ -10,34 +10,26 @@ class WikiPolicy < ApplicationPolicy
   class Scope
     attr_reader :user, :scope
 
-    def intialize(user, scope)
+    def initialize(user, scope)
      @user = user
      @scope = scope
     end
 
     def resolve
       wikis = []
-      if user.present? && user.role == 'admin'
+      if user.admin?
         wikis = scope.all
-      elsif user.present? && user.role == 'premium'
-        all_wikis = scope.all
-        all_wikis.each do |wiki|
-          if wiki.public? || wiki.user == user || wiki.user.include?(user)
+      elsif user.premium?
+        all = scope.all
+        all.each do |wiki|
+          if wiki.public? # add || check if user is collaborator
             wikis << wiki
           end
         end
       else
-        all_wikis = scope.all
-        wikis = []
-        all_wikis.each do |wiki|
-          if wiki.public? || wiki.users.include?(user)
-            wikis << wiki
-          end
-        end
+        wikis = Wiki.where(public: true)
       end
       wikis
     end
-
-
   end
 end

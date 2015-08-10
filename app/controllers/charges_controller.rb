@@ -35,12 +35,5 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
-def downgrade
-    customer = Stripe::Customer.retrieve(current_user.customer_id)
 
-    charges_id = customer.charges.data.first.id
-    current_user.update_attributes(role: 'standard')
-    current_user.make_wikis_public
-    redirect_to edit_user_registration_path
-  end
 end
