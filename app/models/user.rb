@@ -18,4 +18,6 @@ class User < ActiveRecord::Base
   def premium?
     role == 'premium'
   end
+
+  
 end
