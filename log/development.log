@@ -7808,3 +7808,132 @@ Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-10 14:57:49 -0700
+
+
+Started GET "/" for ::1 at 2015-08-11 09:44:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (1.5ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 393ms (Views: 362.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-11 09:44:51 -0700
+
+
+Started GET "/users/edit" for ::1 at 2015-08-11 09:44:54 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (335.7ms)
+Completed 200 OK in 397ms (Views: 393.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/charges/new" for ::1 at 2015-08-11 09:44:56 -0700
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-11 09:45:03 -0700
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-11 09:45:13 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SkIxZLc5RjeTV8+X2Q2QNWB4SHCObC/MhBvTHtXaUb/GiiR+efkFz7Qz5VkhUMFioEJy7HfhgZI8brafvyXw+g=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-11 09:45:13 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-11 09:45:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-11 09:45:29 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ab7SR/VZCdh1yFuAXeyTXI+ZEklGhFVeURgZOiXc7labKq7Cpp7tBSGrgtQE043X62mM+1+cQhm8wriqiSR7sg==", "user"=>{"email"=>"timmy@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "timmy@example.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-08-10 21:56:56.878307"], ["current_sign_in_at", "2015-08-11 16:45:29.417157"], ["sign_in_count", 4], ["updated_at", "2015-08-11 16:45:29.418085"], ["id", 14]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-11 09:45:29 -0700
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 14]]
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.3ms)[0m  SELECT "wikis".* FROM "wikis" WHERE "wikis"."public" = 't'  ORDER BY created_at DESC
+  Rendered wikis/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for ::1 at 2015-08-11 09:45:32 -0700
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 14]]
+  Rendered charges/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/charges" for ::1 at 2015-08-11 09:46:05 -0700
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzaOBnSpX1ELH8ySZAcpBMwUcjGpvL0zd4zQzRSzOKOxqaP60jEzNkVotC52/GzNigFWl3q0E/sv97qeZeSF6Q==", "stripeToken"=>"tok_16YfsyJw78fI3ZyMTyXDtdk0", "stripeTokenType"=>"card", "stripeEmail"=>"timmy@example.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["role", "premium"], ["updated_at", "2015-08-11 16:46:06.094590"], ["id", 14]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 872ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/wikis" for ::1 at 2015-08-11 09:46:06 -0700
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 14]]
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.3ms)

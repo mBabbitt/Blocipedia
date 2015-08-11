@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   resources :wikis
 
-  resources :charges, only: [:new, :create]
+  resources :charges, only: [:new, :create, :update]
 
   authenticated :user do
     root to: 'wikis#index', as: :authenticated_root
