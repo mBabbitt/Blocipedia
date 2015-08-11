@@ -16,7 +16,10 @@ gem 'rails', '4.2.1'
  
 gem 'faker'
 
+gem 'redcarpet'
+
 gem 'stripe'
+
 gem 'devise'
 
 gem 'bootstrap-sass'
