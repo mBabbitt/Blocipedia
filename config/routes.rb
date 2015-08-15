@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'collaborators/create'
+
   devise_for :users
   
   resources :wikis
+  
+  resources :collaborators
 
   resources :charges, only: [:new, :create, :update]
 
