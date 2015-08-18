@@ -27,6 +27,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+     @users = User.all
     authorize @wiki
   end
 
@@ -56,6 +57,6 @@ class WikisController < ApplicationController
    private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :public)
+    params.require(:wiki).permit(:title, :body, :private)
   end
 end

@@ -9065,3 +9065,194 @@ Processing by WikisController#show as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
   Rendered wikis/show.html.erb within layouts/application (0.9ms)
 Completed 200 OK in 82ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:02:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.4ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 306ms (Views: 262.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:02:29 -0700
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.3ms)[0m  SELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/20" for ::1 at 2015-08-18 12:02:31 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.2ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 69.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis/20/edit" for ::1 at 2015-08-18 12:02:32 -0700
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:02:33 -0700
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 59ms (Views: 56.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/new" for ::1 at 2015-08-18 12:03:48 -0700
+Processing by WikisController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/new.html.erb within layouts/application (287.4ms)
+Completed 200 OK in 348ms (Views: 346.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/wikis" for ::1 at 2015-08-18 12:04:04 -0700
+Processing by WikisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aT0ru5p6iF+BJEO3EJg4q5KZr7lmB3I/64+caKAsfqyuskm8/5rSBhddzgrzOGy8DzVw/RMw4BVTNn5O4wmMbA==", "wiki"=>{"title"=>"ok", "body"=>"try this again", "public"=>"0"}, "commit"=>"Save"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("title", "body", "public", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "ok"], ["body", "try this again"], ["public", "f"], ["created_at", "2015-08-18 19:04:04.905476"], ["updated_at", "2015-08-18 19:04:04.905476"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/25
+Completed 302 Found in 15ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/wikis/25" for ::1 at 2015-08-18 12:04:04 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 62ms (Views: 59.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis/25/edit" for ::1 at 2015-08-18 12:04:07 -0700
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:04:07 -0700
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 25], ["id", 3]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:07:40 -0700
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 25], ["id", 3]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 72ms (Views: 52.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-22f18662beb2b79d3a542e62fb2f6ed1f96829c59208c86b64dbe89c9e8ab97c.css?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/collaborators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-18 12:07:40 -0700
+
+
+Started GET "/wikis/20" for ::1 at 2015-08-18 12:08:07 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.2ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/20/edit" for ::1 at 2015-08-18 12:08:08 -0700
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:08:08 -0700
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.4ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 25], ["id", 3]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/20" for ::1 at 2015-08-18 12:10:09 -0700
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.2ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered wikis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 68ms (Views: 46.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/wikis/20/edit" for ::1 at 2015-08-18 12:10:10 -0700
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ?  ORDER BY created_at DESC LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-18 12:10:10 -0700
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY created_at DESC[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1  [["wiki_id", 25], ["id", 3]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["wiki_id", 24], ["id", 3]]
+  Rendered wikis/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 48.6ms | ActiveRecord: 0.8ms)

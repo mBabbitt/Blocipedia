@@ -21,5 +21,15 @@ class User < ActiveRecord::Base
     role == 'premium'
   end
   
+  def upgrade_account(user)
+    user.role = 'premium'
+    user.save
+  end
+
+  def downgrade_account(user)
+    user.role = 'standard'
+    user.save
+    user.wikis.where(private: true).update_all(private: false)
+  end
 
 end
