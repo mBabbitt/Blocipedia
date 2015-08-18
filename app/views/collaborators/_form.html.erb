@@ -1,4 +1,4 @@
-<% if (current_user.premium? && wiki.user == current_user) || current_user.admin? %>
+<% if (current_user.premium? && @wiki.user == current_user) || current_user.admin? %>
     <h2>Collaborators</h2>
     <% @users.each do |user| %>
         <div class="form-group">

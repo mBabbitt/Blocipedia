@@ -1,32 +1,24 @@
 class CollaboratorsController < ApplicationController
   def create
-    @collaborator = Collaborator.new(collaborator_params)
-    @wiki = Wiki.find(params[:collaborator][:wiki_id])
-    if @collaborator.save
-      flash[:notice] = "Collaborator added successfully."
-      redirect_to @wiki
+    wiki = Wiki.find(params[:wiki_id])
+    user = User.find(params[:user_id])
+    collaborator = Collaborator.new(wiki: wiki, user: user)
+    if collaborator.save
+      flash[:notice] = "Collaborator was saved."
     else
-      flash[:error] = "Something went wrong."
-      redirect_to @wiki
+      flash[:error] = "Collaborator was not saved. Try again."
     end
+    redirect_to edit_wiki_path wiki
   end
 
   def destroy
-    @collaborator = Collaborator.find_by_user_id_and_wiki_id(params[:collaborator][:user_id], params[:collaborator][:wiki_id])
-    @wiki = @collaborator.wiki
-    if @collaborator.delete
-      flash[:notice] = "Collaborator removed successfully."
-      redirect_to @wiki
+    wiki = Wiki.find(params[:wiki_id])
+    collaborator = wiki.collaborators.where(user_id: (params[:id])).first
+    if collaborator.delete
+      flash[:notice] = "Collaborator was removed."
     else
-      flash[:error] = "Something went wrong."
-      redirect_to @wiki
+      flash[:error] = "Collaborator was not removed. Try again."
     end
+    redirect_to edit_wiki_path wiki
   end
-
-  private
-
-  def collaborator_params
-    params.require(:collaborator).permit(:user_id, :wiki_id)
-  end
-
 end
