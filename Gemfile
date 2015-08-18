@@ -18,6 +18,7 @@ gem 'faker'
 
 gem 'stripe'
 gem 'devise'
+gem 'redcarpet'
 
 gem 'bootstrap-sass'
 

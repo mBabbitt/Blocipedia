@@ -11,4 +11,7 @@
     <div class='form-group'>
       <%= f.submit "Save", class: 'btn btn-success' %>
     </div>
+
+     <div class="form-group">
+            <%= render partial: 'collaborators/form', locals: {f: f, wiki: @wiki} %>
 <% end %>
