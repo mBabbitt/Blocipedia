@@ -12,13 +12,14 @@ class CollaboratorsController < ApplicationController
   end
 
   def destroy
-    wiki = Wiki.find(params[:wiki_id])
-    collaborator = wiki.collaborators.where(user_id: (params[:id])).first
-    if collaborator.delete
-      flash[:notice] = "Collaborator was removed."
+    @wiki = Wiki.find(params[:wiki_id])
+    @collaborator = Collaborator.new(user_id: params[:user_id], wiki_id: params[:wiki_id])
+
+    if @collaborator.destroy
+      flash[:notice] = "Collaborator removed from wiki."
+      redirect_to @wiki
     else
-      flash[:error] = "Collaborator was not removed. Try again."
+      flash[:error] = "There was an error deleting this collaborator. Please try again."
     end
-    redirect_to edit_wiki_path wiki
   end
 end
