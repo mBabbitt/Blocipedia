@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
  
  has_many :collaborators, through: :wikis
 
+ def is_owner_of?(wiki)
+   id == wiki.user_id
+ end
+
 
   def standard?
     role == 'standard'

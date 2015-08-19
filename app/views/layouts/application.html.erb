@@ -10,10 +10,8 @@
 <body>
     <div class="container">
       <ul class="nav nav-tabs">
-          <li><%= link_to "Blocipedia", root_path %></li>
         <li><%= link_to "Wikis", wikis_path %></li>
-    
-       <div class="pull-right user-info">
+        <div class="pull-right user-info">
         <% if user_signed_in? %>
           Hello <%= current_user.name %>!
           <% if current_user.role == 'standard' %>

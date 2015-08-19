@@ -26,7 +26,7 @@ class Scope
              wikis << wiki # if the user is premium, only show them public wikis, or that private wikis they created, or private wikis they are a collaborator on
            end
          end
-       else # this is the lowly standard user
+       else 
          all_wikis = scope.all
          wikis = []
          all_wikis.each do |wiki|

@@ -1,16 +1,22 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
- .title {
-   color: #441773;
-   text-align: center;
-   font-size: 22x;
 
- }
 
+.title {
+   color: #7666D4;
+}
+
+.subtext{
+  color: #D4668D;
+  font-size: 22x;
+}
+
+.smaller {
+  color: #66D4AD;
+  font-size: 14x;
+}
  .subtitle {
- color: #876AA5;
- text-align: center;
- font-size: 18px;
+ color: #D4668D;;
  }
 
  .user-info {
@@ -19,4 +25,8 @@
  
  .nav {
    margin-top: 5px;
- }
+}
+
+.btn-primary { 
+  background-color: #7666D4; 
+}

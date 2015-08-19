@@ -21,6 +21,7 @@ gem 'redcarpet'
 gem 'stripe'
 
 gem 'devise'
+gem 'redcarpet'
 
 gem 'bootstrap-sass'
 
